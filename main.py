@@ -1,6 +1,17 @@
+import os
 import streamlit as st
 from agents import financial_planning_orchestrator_agent, client
 from utils import pretty_print_messages
+
+st.sidebar.title("Configuration")
+api_key = st.sidebar.text_input("Enter your OpenAI API Key", type="password")
+
+if api_key:
+    os.environ["OPENAI_API_KEY"] = api_key
+    st.sidebar.success("API Key set successfully!")
+else:
+    st.sidebar.warning("Please enter your OpenAI API Key")
+    
 st.title("Personal Finance AI")
 
 agent = financial_planning_orchestrator_agent
