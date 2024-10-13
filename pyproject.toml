@@ -10,6 +10,7 @@ package-mode = false
 python = "^3.11"
 swarm = {git = "https://github.com/openai/swarm.git"}
 streamlit = "^1.39.0"
+python-dotenv = "^1.0.1"
 
 
 [build-system]
